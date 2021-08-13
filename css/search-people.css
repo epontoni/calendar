@@ -1,0 +1,26 @@
+
+.searchPeople {
+    position: relative;
+}
+
+.searchPeople input {
+    background: var(--gray10);
+    border: none;
+    outline: none;
+    padding-block: 0.625rem;
+    padding-inline-start: 2.75rem;
+    padding-inline-end: 1.5rem;
+    font: var(--body1-regular);
+}
+
+.searchPeople input:focus {
+    box-shadow:0 2px 0 var(--blue10);
+}
+
+.searchPeople i {
+    position: absolute;
+    font-size: 1.5rem;
+    left: .75rem;
+    top: calc(50% - .75rem);
+    block-size: 1.5rem;
+}

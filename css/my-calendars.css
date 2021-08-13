@@ -1,0 +1,14 @@
+.misCalendarios details {
+    display: flex;
+    flex-direction: row;
+}
+
+.misCalendarios label {
+    display: inline-block;
+    margin-block-start: .875rem;
+    font: var(--body1-regular);
+}
+
+.misCalendarios summary {
+    font: var(--body1-medium);
+}

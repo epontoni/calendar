@@ -1,0 +1,85 @@
+:root {
+    --gridColumns: 1fr 400px 880px 1fr;
+    --black: #000;
+    --yellow: #FED941;
+    --gray: #808080;
+    --white: #FFF;
+
+    font-size: 16px;
+    --baseFontFamily: 'Inter', sans-serif;
+    /*font: font-weight font-size / line-height font-family*/
+    --headLine1: bold 3rem / 3.625rem var(--baseFontFamily);
+    --headLine2: bold 3rem / 3.625rem var(--baseFontFamily);
+    --headLine3: bold 2.3125rem / normal var(--baseFontFamily);
+    --headLine4: bold 1.75rem / normal var(--baseFontFamily);
+    --headLine5: bold 1.5rem / normal var(--baseFontFamily);
+    --baseFont: normal 1.125rem / normal var(--baseFontFamily);
+    --baseFontBold: bold .1.125rem / normal var(--baseFontFamily);
+    --small: normal .75em / normal var(--baseFontFamily);
+}
+
+body {
+    margin: 0;
+    font-family: var(--baseFontFamily);
+}
+
+header {
+    color: var(--white);
+    grid-area: header;
+    background: black;
+}
+
+.header-grid {
+    height: 86px;
+    display: grid;
+    grid-template-columns: 1fr 1280px 1fr;
+    grid-template-areas:    "wrapper-start header-content wrapper-end";
+    align-items: center;
+    border: 1px solid blue;
+}
+
+.header-content {
+    grid-area: header-content;
+    display: flex;
+    justify-content: space-between;
+    background: red;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: var(--gridColumns);
+    /*grid-template-rows: 85px;*/
+    grid-template-areas:    "header header header header"
+                            "wrapper-start phone content wrapper-end";
+}
+
+.hero {
+    grid-column: 1 / -1;
+    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: var(--gridColumns);
+}
+
+.hero-content {
+    grid-row-start: 1;
+    grid-column-start: 3;
+}
+
+.phone {
+    aspect-ratio: 9/16;
+    inline-size: 400px;
+    position: sticky;
+    inset-block-start: 0;
+    background: lightgreen;
+    grid-area: phone;
+}
+
+section {
+    border: 1px solid red;
+    grid-column: 1 / -1;
+    min-block-size: 400px;
+}
+.section-1 {}
+.section-2 {}
+.section-3 {}
+.section-4 {}

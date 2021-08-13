@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+}
+
+input[id="list"]:checked ~ .project-list {
+    border-top: 1px solid gray;
+    padding: .5rem;
+}
+
+input[id="grid"]:checked ~ .project-list {
+    border-top: 1px solid gray;
+    padding: .5rem;
+}
+
+.project-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    user-select: none;
+    padding: 1rem;
+}
+
+
+/* LIST */
+
+input[id="list"]:checked ~ .project-actions [for="list"] {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background: gray;
+    border: 1px solid gray;
+}
+
+input[id="grid"]:checked ~ .project-actions [for="grid"] {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background: gray;
+    border: 1px solid gray;
+}
+
+input[id="list"]:checked ~ .project-list > .project {
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: 50px 1fr 100px 100px;
+}
+
+input[id="list"]:checked ~ .project-list > .project img {
+    inline-size: 50px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* GRID */
+input[id="grid"]:checked ~ .project-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+
+input[id="grid"]:checked ~ .project-list > .project {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 200px auto auto;
+    align-items: center;
+    border-radius: .5rem;
+    overflow: hidden;
+    border: 1px solid gray;
+}
+
+input[id="grid"]:checked ~ .project-list > .project img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    grid-area: 1 / 1/ 1 / -1;
+}
+
+input[id="grid"]:checked ~ .project-list > .project time:nth-of-type(1) {
+    grid-column-start: 2;
+    text-align: right;
+    padding-right: .5rem;
+}
+
+input[id="grid"]:checked ~ .project-list > .project time:nth-of-type(2) {
+    grid-column-start: 2;
+    text-align: right;
+    padding-right: .5rem;
+}
+input[id="grid"]:checked ~ .project-list > .project .project-name {
+    grid-row: 2 / 4;
+    padding-left: .5rem;
+}
